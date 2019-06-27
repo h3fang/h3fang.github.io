@@ -11,7 +11,6 @@ Sometimes I don't even need a step by step debug environment. I just want some c
 
 ```python
 import faulthandler
-
 faulthandler.enable()
 ```
 
