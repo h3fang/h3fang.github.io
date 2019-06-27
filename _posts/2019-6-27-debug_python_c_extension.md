@@ -18,4 +18,4 @@ Simple and working.
 
 ### References
 
-* https://docs.python.org/3/library/faulthandler.html
+* <https://docs.python.org/3/library/faulthandler.html>
