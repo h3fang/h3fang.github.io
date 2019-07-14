@@ -27,7 +27,7 @@ The **all_closed** variable is modified in the subshell created by pipes. The ou
 Fixing this piece of code is easy, just avoid using subshell (pipe).
 
 ```bash
-for app in $(wmctrl -l | awk '{print $1}'); do
+for APP in $(wmctrl -l | awk '{print $1}'); do
     notify-send "[$APP] is not closed, please check unsaved content and close it manually."
     $all_closed=0
 done
