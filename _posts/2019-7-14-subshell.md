@@ -3,7 +3,7 @@ layout: post
 title: Be careful when using pipes in shell script
 ---
 
-> "|" pipe operator redirects I/O to a subshell.
+> `"|"` pipe operator redirects I/O to a subshell.
 
 > Variables in a subshell are not visible outside the block of code in the subshell.
 
