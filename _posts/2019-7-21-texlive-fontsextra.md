@@ -62,7 +62,7 @@ If the official package got an update, it ill be installed and overwrite our cha
 groups=('texlive-most' 'modified')
 ```
 
-and ignore the `modifed` group in `/etc/pacman.conf` file.
+and ignore the `modified` group in `/etc/pacman.conf` file.
 
 ```ini
 # ...
