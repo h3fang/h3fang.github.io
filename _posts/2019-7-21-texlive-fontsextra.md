@@ -71,3 +71,5 @@ IgnoreGroup = modified
 ```
 
 This way the official update to this package will be ignored, but we can still get a warning, so we can update our modified package accordingly.
+
+The full PKGBUILD can be found [here](https://github.com/h3fang/AUR/blob/master/texlive-fontsextra-h3f/PKGBUILD).
