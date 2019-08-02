@@ -4,7 +4,7 @@ title: Tags
 permalink: /tags/
 ---
 
-{% for tag in tags %}
+{% for tag in site.tags %}
 	<h2 id="{{ tag | slugify }}">{{ tag }}</h2>
 	<ul>
 	 {% for post in site.posts %}
