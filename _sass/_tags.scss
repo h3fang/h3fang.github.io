@@ -1,21 +1,26 @@
-.post-tag {
-  display: inline-block;
-  background: rgba($theme-color, 0.15);
-  padding: 0 .5rem;
-  margin-right: .5rem;
-  border-radius: 4px;
-  color: $theme-color;
-  font-family: $font-sans;
-  font-size: 90%;
-  &:before {
-    content: "\f02b";
-    font-family: $font-awesome;
-    padding-right: .5em;
-  }
-  &:hover {
-    text-decoration: none;
-    background: $theme-color;
-    color: $white;
+.post-tags {
+  margin-bottom: 1em;
+  border-bottom: 1px solid #eee;
+
+  .post-tag {
+    display: inline-block;
+    background: rgba($theme-color, 0.15);
+    padding: 0 .5rem;
+    margin-right: .5rem;
+    border-radius: 4px;
+    color: $theme-color;
+    font-family: $font-sans;
+    font-size: 90%;
+    &:before {
+      content: "\f02b";
+      font-family: $font-awesome;
+      padding-right: .5em;
+    }
+    &:hover {
+      text-decoration: none;
+      background: $theme-color;
+      color: $white;
+    }
   }
 }
 
