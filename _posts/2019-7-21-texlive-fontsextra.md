@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Debloating texlive-fontsextra
+tags: archlinux texlive PKGBUILD
 ---
 
 The [texlive-fontsextra](https://www.archlinux.org/packages/extra/any/texlive-fontsextra/) package is so bloated. It leaves a 1.1 GB package on your file system and pollutes your font cache with thousands of useless fonts.

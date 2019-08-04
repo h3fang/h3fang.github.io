@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Debug python c/c++ extensions
+tags: python
 ---
 
 It's common to use c/c++ extension in python program for better performance. But it's hard to debug c/c++ code when it's called from python.

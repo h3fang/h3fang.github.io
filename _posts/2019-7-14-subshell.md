@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Be careful when using pipes in shell script
+tags: shell
 ---
 
 > `"|"` pipe operator redirects I/O to a subshell.
