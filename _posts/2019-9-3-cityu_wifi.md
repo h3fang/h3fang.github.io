@@ -43,6 +43,33 @@ The second one is also weird. A quick search shows that PMKSA-CACHE enables fast
 
 I think the easy solution is to disable PMKSA-CACHE. But NetworkManager actually [always enables](https://gitlab.freedesktop.org/NetworkManager/NetworkManager/commit/f1f0ada0c614f1e1353d271e345feb3fafa9d7e7) proactive key caching for WPA Enterprise connections. So I have to patch the source code to disable it. That's too much work to do. I will just leave it as default (for now).
 
+## Update (2019-09-04)
+
+I have found a workaround to disable the enforced proactive key caching function, by using a specific BSSID for you WIFI connection.
+
+We can list all the BSSIDs around us for the WIFI SSID (for my case **CityU WLAN (WPA)**) by using
+
+```shell
+$ nmcli -f SSID,BSSID,SIGNAL,ACTIVE,FREQ dev wifi list --rescan yes | grep "CityU WLAN (WPA)"
+CityU WLAN (WPA)    xx:xx:xx:xx:xx:40  100     no      2412 MHz
+CityU WLAN (WPA)    xx:xx:xx:xx:xx:00  94      no      2437 MHz
+CityU WLAN (WPA)    xx:xx:xx:xx:xx:10  75      yes     5785 MHz
+CityU WLAN (WPA)    xx:xx:xx:xx:xx:A0  70      no      2412 MHz
+CityU WLAN (WPA)    xx:xx:xx:xx:xx:40  64      no      2437 MHz
+CityU WLAN (WPA)    xx:xx:xx:xx:xx:A0  57      no      2462 MHz
+CityU WLAN (WPA)    xx:xx:xx:xx:xx:A0  55      no      2412 MHz
+CityU WLAN (WPA)    xx:xx:xx:xx:xx:E1  54      no      2412 MHz
+CityU WLAN (WPA)    xx:xx:xx:xx:xx:F1  49      no      5240 MHz
+```
+
+Choose a BSSID that is good for you (strong signal strength, 2.4G or 5G)
+
+Then specify the BSSID for your WIFI profile (if you use `NetworkManager` and `nm-applet`.).
+
+![_config.yml]({{ site.baseurl }}/images/NetworkManager-BSSID.png){: .align-center}
+
+The downside of this workaround is that your WIFI will **NOT** connect to any other access points for the same SSID. So if you moved your laptop to a new place (thus a different access point), remember to specify a new BSSID or just remove the specified BSSID.
+
 # References
 - <https://stackoverflow.com/questions/29966496/dhclient-override-renewal-time>
 - <https://gitlab.freedesktop.org/NetworkManager/NetworkManager/commit/f1f0ada0c614f1e1353d271e345feb3fafa9d7e7>
