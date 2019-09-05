@@ -45,7 +45,7 @@ I think the easy solution is to disable PMKSA-CACHE. But NetworkManager actually
 
 ## Update (2019-09-04)
 
-I have found a workaround to disable the enforced proactive key caching function, by using a specific BSSID for you WIFI connection.
+I have found a workaround to disable the enforced proactive key caching function, by using a specific BSSID for your WIFI connection.
 
 We can list all the BSSIDs around us for the WIFI SSID (for my case **CityU WLAN (WPA)**) by using
 
@@ -62,9 +62,9 @@ CityU WLAN (WPA)    xx:xx:xx:xx:xx:E1  54      no      2412 MHz
 CityU WLAN (WPA)    xx:xx:xx:xx:xx:F1  49      no      5240 MHz
 ```
 
-Choose a BSSID that is good for you (strong signal strength, 2.4G or 5G)
+Choose a BSSID (the MAC address of the access point) that is good for you (strong signal strength, 2.4G or 5G).
 
-Then specify the BSSID for your WIFI profile (if you use `NetworkManager` and `nm-applet`.).
+Then specify the BSSID for your WIFI profile (if you use `NetworkManager` and `nm-applet`).
 
 ![_config.yml]({{ site.baseurl }}/images/NetworkManager-BSSID.png){: .align-center}
 
