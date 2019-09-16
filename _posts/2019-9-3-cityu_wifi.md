@@ -70,6 +70,30 @@ Then specify the BSSID for your WIFI profile (if you use `NetworkManager` and `n
 
 The downside of this workaround is that your WIFI will **NOT** connect to any other access points for the same SSID. So if you moved your laptop to a new place (thus a different access point), remember to specify a new BSSID or just remove the specified BSSID.
 
+## Update (2019-09-16)
+
+The excessive log messages from NetworkManager DHCP component and wpa_supplicant are really annoying. The system journal is filled with useless messages and the real important log messages are discarded, since I set the 50M journal file size limit.
+
+To suppress NetworkManager DHCP log messages lower than *warning* level, we can set
+
+```bash
+$ sudo nmcli general logging level WARN domain DHCP
+```
+
+To make this consistent after boot, we can add a configuration file for NetworkManager by using
+
+```bash
+$ echo -e '[logging]\nlevel=WARN\ndomains=DHCP' | sudo tee /etc/NetworkManager/conf.d/dhcp-logging.conf
+```
+
+To suppress wpa_supplicant log messages lower than *warning* level we can override the systemd service unit with
+
+```bash
+$ echo -e '[Service]\nLogLevelMax=4' | sudo SYSTEMD_EDITOR=tee systemctl edit wpa_supplicant.service
+```
+
+Finally I get a more meaningful system journal (filled with errors 😂).
+
 # References
 - <https://stackoverflow.com/questions/29966496/dhclient-override-renewal-time>
 - <https://gitlab.freedesktop.org/NetworkManager/NetworkManager/commit/f1f0ada0c614f1e1353d271e345feb3fafa9d7e7>
