@@ -6,6 +6,10 @@ permalink: /heart
 
 <!-- GLSL heart, modified from https://www.shadertoy.com/view/WdK3Dz -->
 <canvas class="glslCanvas" data-fragment="
+  #ifdef GL_ES
+  precision mediump float;
+  #endif
+
   uniform vec2 u_resolution;
   uniform float u_time;
   #define POINT_COUNT 15
