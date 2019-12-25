@@ -67,7 +67,7 @@
       render();
     }
     function render() {
-      uniforms.u_time.value = performance.now();
+      uniforms.u_time.value = performance.now() / 1000.0;
       renderer.render( scene, camera );
     }
   </script>
