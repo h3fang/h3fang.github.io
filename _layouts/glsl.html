@@ -27,6 +27,7 @@
     var container;
     var camera, scene, renderer;
     var uniforms;
+    var clock = new THREE.Clock();
     init();
     animate();
     function init() {
@@ -67,7 +68,7 @@
       render();
     }
     function render() {
-      uniforms.u_time.value = performance.now() / 1000.0;
+      uniforms.u_time.value = clock.getElapsedTime();
       renderer.render( scene, camera );
     }
   </script>
