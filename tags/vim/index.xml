@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vim on HE Fang - Some where to write something</title>
+    <link>https://h3fang.github.io/tags/vim/</link>
+    <description>Recent content in vim on HE Fang - Some where to write something</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 17 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://h3fang.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Save as root in non-root vim</title>
+      <link>https://h3fang.github.io/post/2019/vim_save_as_root/</link>
+      <pubDate>Tue, 17 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://h3fang.github.io/post/2019/vim_save_as_root/</guid>
+      <description>&lt;p&gt;Sometimes, you edited some system files and want to save them, but then realized you forgot to open them in vim with root privileges. What can you do now?&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

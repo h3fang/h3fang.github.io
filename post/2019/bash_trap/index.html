@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>HE Fang - Some where to write something</title>
+  <title>The Bash Trap Command - HE Fang - Some where to write something</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="He Fang" />
+<meta name="author" content="He Fang" /><meta name="description" content="Just want to recommend a very good writeup for bash trap command.
+" />
 
 
 
@@ -26,9 +27,7 @@
 <meta name="generator" content="Hugo 0.70.0 with theme even" />
 
 
-<link rel="canonical" href="https://h3fang.github.io/" />
-  <link href="https://h3fang.github.io/index.xml" rel="alternate" type="application/rss+xml" title="HE Fang - Some where to write something" />
-  <link href="https://h3fang.github.io/index.xml" rel="feed" type="application/rss+xml" title="HE Fang - Some where to write something" />
+<link rel="canonical" href="https://h3fang.github.io/post/2019/bash_trap/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -41,15 +40,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="HE Fang - Some where to write something" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://h3fang.github.io/" />
-<meta property="og:updated_time" content="2019-06-16T10:39:58+08:00" />
-<meta itemprop="name" content="HE Fang - Some where to write something">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="HE Fang - Some where to write something"/>
-<meta name="twitter:description" content=""/>
+<meta property="og:title" content="The Bash Trap Command" />
+<meta property="og:description" content="Just want to recommend a very good writeup for bash trap command." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://h3fang.github.io/post/2019/bash_trap/" />
+<meta property="article:published_time" content="2019-08-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-08-08T00:00:00+00:00" />
+<meta itemprop="name" content="The Bash Trap Command">
+<meta itemprop="description" content="Just want to recommend a very good writeup for bash trap command.">
+<meta itemprop="datePublished" content="2019-08-08T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-08-08T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="81">
+
+
+
+<meta itemprop="keywords" content="linux,shell," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Bash Trap Command"/>
+<meta name="twitter:description" content="Just want to recommend a very good writeup for bash trap command."/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -113,129 +120,101 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          <section id="posts" class="posts">
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2020/libuv/">First impression with libuv</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2020-01-01 </span>
-      
-        <span class="more-meta"> 446 words </span>
-        <span class="more-meta"> 3 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Happy New Year! May it be <strong>year of the Linux desktop</strong>.</p>
-<p>Recently I tried to port my small <a href="https://github.com/h3fang/cdns">DNS relay and dispatcher</a> to <a href="https://libuv.org/">libuv</a> - the core of <a href="https://nodejs.org/">node.js</a>.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/2020/libuv/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2019/vim_save_as_root/">Save as root in non-root vim</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-09-17 </span>
-      
-        <span class="more-meta"> 215 words </span>
-        <span class="more-meta"> 2 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Sometimes, you edited some system files and want to save them, but then realized you forgot to open them in vim with root privileges. What can you do now?</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/2019/vim_save_as_root/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2019/cityu_wifi/">The Weird CityU WIFI Network</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-09-03 </span>
-      
-        <span class="more-meta"> 877 words </span>
-        <span class="more-meta"> 5 mins read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Recently when I checked the system journals, I found a lot of spams generated by my WIFI connection like these</p>
-<div class='align-center'>
-<p><img src="/image/NetworkManager-dhcp4.jpg" alt=""></p>
-<p><img src="/image/wpa-supplicant-PMKSA-CACHE.jpg" alt=""></p>
-</div>
-    </div>
-    <div class="read-more">
-      <a href="/post/2019/cityu_wifi/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2019/tilde_vs_home/">~ vs $HOME</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-08-12 </span>
-      
-        <span class="more-meta"> 176 words </span>
-        <span class="more-meta"> 1 min read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p><code>~</code> is expanded to current user home directory by shell, just like the variable <code>$HOME</code>.</p>
-<p>While <code>$HOME</code> is expanded in most places (except inside single quotes), <code>~</code> is expanded only in a few specific conditions.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/2019/tilde_vs_home/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2019/bash_trap/">The Bash Trap Command</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-08-08 </span>
-      
-        <span class="more-meta"> 81 words </span>
-        <span class="more-meta"> 1 min read </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Just want to recommend a very good <a href="https://www.linuxjournal.com/content/bash-trap-command">writeup</a> for bash trap command.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/2019/bash_trap/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    </section>
-  
-  <nav class="pagination">
+          <article class="post">
     
-    <a class="next" href="/page/2/">
-        <span class="next-text">Next</span>
-        <i class="iconfont icon-right"></i>
-      </a>
-  </nav>
-        </div>
+    <header class="post-header">
+      <h1 class="post-title">The Bash Trap Command</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-08-08 </span>
         
+          <span class="more-meta"> 81 words </span>
+          <span class="more-meta"> 1 min read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>Just want to recommend a very good <a href="https://www.linuxjournal.com/content/bash-trap-command">writeup</a> for bash trap command.</p>
+<p>Quick highlights:</p>
+<ul>
+<li>Interrupted commands are not restarted.</li>
+<li>Reset signal handling by using <code>-</code> as command, e.g. <code>trap - SIGINT</code>.</li>
+<li>Traps caught by the shell are reset to the values inherited from the shell&rsquo;s parent.</li>
+<li>If you need to test something with <code>sudo</code> and want to make sure that everything is working both when <code>sudo</code> prompts for a password and when it does not prompt for a password.</li>
+</ul>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.linuxjournal.com/content/bash-trap-command">https://www.linuxjournal.com/content/bash-trap-command</a></li>
+</ul>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">He Fang</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-08-08
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">linux</a>
+          <a href="/tags/shell/">shell</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2019/tilde_vs_home/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">~ vs $HOME</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/2019/texlive-fontsextra/">
+            <span class="next-text nav-default">Debloating texlive-fontsextra</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'h3fang';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
 
       </div>
     </main>

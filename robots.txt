@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://h3fang.github.io/sitemap.xml

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>asynchronous on HE Fang - Some where to write something</title>
+    <link>https://h3fang.github.io/tags/asynchronous/</link>
+    <description>Recent content in asynchronous on HE Fang - Some where to write something</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://h3fang.github.io/tags/asynchronous/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>First impression with libuv</title>
+      <link>https://h3fang.github.io/post/2020/libuv/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://h3fang.github.io/post/2020/libuv/</guid>
+      <description>&lt;p&gt;Happy New Year! May it be &lt;strong&gt;year of the Linux desktop&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Recently I tried to port my small &lt;a href=&#34;https://github.com/h3fang/cdns&#34;&gt;DNS relay and dispatcher&lt;/a&gt; to &lt;a href=&#34;https://libuv.org/&#34;&gt;libuv&lt;/a&gt; - the core of &lt;a href=&#34;https://nodejs.org/&#34;&gt;node.js&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
