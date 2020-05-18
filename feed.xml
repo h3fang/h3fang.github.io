@@ -1,15 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>linux on HE Fang - Some where to write something</title>
-    <link>https://h3fang.github.io/tags/linux/</link>
-    <description>Recent content in linux on HE Fang - Some where to write something</description>
+    <title>HE Fang - Some where to write something</title>
+    <link>https://h3fang.github.io/</link>
+    <description>Recent content on HE Fang - Some where to write something</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 17 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 16 Jun 2019 10:39:58 +0800</lastBuildDate>
     
-	<atom:link href="https://h3fang.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://h3fang.github.io/feed.xml" rel="self" type="applicatoin/rss+xml" />
     
+    
+    <item>
+      <title>About</title>
+      <link>https://h3fang.github.io/about/</link>
+      <pubDate>Sun, 16 Jun 2019 10:39:58 +0800</pubDate>
+      
+      <guid>https://h3fang.github.io/about/</guid>
+      <description>About me Nothing.
+More information Nothing.
+Contact me Don&amp;rsquo;t do it.</description>
+    </item>
+    
+    <item>
+      <title>First impression with libuv</title>
+      <link>https://h3fang.github.io/post/2020/libuv/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://h3fang.github.io/post/2020/libuv/</guid>
+      <description>&lt;p&gt;Happy New Year! May it be &lt;strong&gt;year of the Linux desktop&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Recently I tried to port my small &lt;a href=&#34;https://github.com/h3fang/cdns&#34;&gt;DNS relay and dispatcher&lt;/a&gt; to &lt;a href=&#34;https://libuv.org/&#34;&gt;libuv&lt;/a&gt; - the core of &lt;a href=&#34;https://nodejs.org/&#34;&gt;node.js&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Save as root in non-root vim</title>
@@ -76,6 +97,24 @@
     </item>
     
     <item>
+      <title>Debug python c/c&#43;&#43; extensions</title>
+      <link>https://h3fang.github.io/post/2019/debug_python_c_extension/</link>
+      <pubDate>Thu, 27 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://h3fang.github.io/post/2019/debug_python_c_extension/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s common to use c/c++ extension in python program for better performance. But it&amp;rsquo;s hard to debug c/c++ code when it&amp;rsquo;s called from python.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>git diff 101</title>
+      <link>https://h3fang.github.io/post/2019/git_diff/</link>
+      <pubDate>Thu, 20 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://h3fang.github.io/post/2019/git_diff/</guid>
+      <description>&lt;p&gt;To use git diff more efficiently, we actually have to understand different stages of git files.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>dotfiles</title>
       <link>https://h3fang.github.io/post/2019/dotfiles/</link>
       <pubDate>Sun, 16 Jun 2019 10:23:37 +0800</pubDate>
@@ -84,6 +123,15 @@
       <description>&lt;blockquote&gt;
 &lt;p&gt;When you live in a command line, configurations are a deeply personal thing. They are often crafted over years of experience, battles lost, lessons learned, advice followed, and ingenuity rewarded. When you are away from your own configurations, you are an orphaned refugee in unfamiliar and hostile surroundings. You feel clumsy and out of sorts. You are filled with a sense of longing to be back in a place you know. A place you built. A place where all the short-cuts have been worn bare by your own travels. A place you proudly call… &lt;strong&gt;$HOME&lt;/strong&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://h3fang.github.io/post/2019/hello-world/</link>
+      <pubDate>Sat, 15 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://h3fang.github.io/post/2019/hello-world/</guid>
+      <description>&lt;p&gt;Hello Github Pages &amp;amp; Jekyll!&lt;/p&gt;</description>
     </item>
     
   </channel>
