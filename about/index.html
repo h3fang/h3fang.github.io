@@ -150,9 +150,10 @@ Contact me Don&rsquo;t do it."/>
     <script type="text/javascript">
       
       
-      if (window.location.hostname === 'localhost') return;
-      var disqus_shortname = 'h3fang';
-      disqusLoader('.comments', { scriptUrl: '//' + disqus_shortname + '.disqus.com/embed.js' });
+      if (window.location.hostname !== 'localhost') {
+        var disqus_shortname = 'h3fang';
+        disqusLoader('.comments', { scriptUrl: '//' + disqus_shortname + '.disqus.com/embed.js' });
+      }
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
