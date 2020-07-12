@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>programming · HE Fang - Some where to write something</title>
+  <title>Line buffering in IO - HE Fang - Some where to write something</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="He Fang" />
+<meta name="author" content="He Fang" /><meta name="description" content="" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.73.0 with theme even" />
 
 
-<link rel="canonical" href="https://h3fang.github.io/tags/programming/" />
+<link rel="canonical" href="https://h3fang.github.io/post/2020/line_buffering_in_io/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -35,18 +35,26 @@
 
 
 
-<link href="/sass/main.min.f4f477372c8e29cb59eae7166b66d7804fce9ff2ffcfdb5c9a2adf0a59b04ab1.css" rel="stylesheet">
+<link href="/sass/main.min.ea4964c050661c4f118424fddb3568261f6ce71ba01cbdf5d1b173db940158df.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" crossorigin="anonymous">
 
 
-<meta property="og:title" content="programming" />
+<meta property="og:title" content="Line buffering in IO" />
 <meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://h3fang.github.io/tags/programming/" />
-<meta property="og:updated_time" content="2020-06-04T19:05:34+08:00" />
-<meta itemprop="name" content="programming">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="programming"/>
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://h3fang.github.io/post/2020/line_buffering_in_io/" />
+<meta property="article:published_time" content="2020-05-25T06:06:22+08:00" />
+<meta property="article:modified_time" content="2020-05-25T06:06:22+08:00" />
+<meta itemprop="name" content="Line buffering in IO">
+<meta itemprop="description" content="">
+<meta itemprop="datePublished" content="2020-05-25T06:06:22&#43;08:00" />
+<meta itemprop="dateModified" content="2020-05-25T06:06:22&#43;08:00" />
+<meta itemprop="wordCount" content="0">
+
+
+
+<meta itemprop="keywords" content="c&#43;&#43;," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Line buffering in IO"/>
 <meta name="twitter:description" content=""/>
 
 <!--[if lte IE 9]>
@@ -112,27 +120,44 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          <section id="archive" class="archive">
-  <div class="archive-title tag">
-        <h2 class="archive-name">programming</h2>
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Line buffering in IO</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-05-25 </span>
+        
+          <span class="more-meta"> 0 words </span>
+          <span class="more-meta"> 0 mins read </span>
+        
       </div>
+    </header>
 
-  <div class="archive-post">
-      <span class="archive-post-time">
-        2020-06-04
-      </span>
-      <span class="archive-post-title">
-        <a href="/post/2020/ugly_code/" class="archive-post-link">
-          Don&#39;t write ugly code
-        </a>
-      </span>
+    
+    <div class="post-content">
+      
     </div>
-</section>
 
-<nav class="pagination">
-  
-  
-</nav>
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/c&#43;&#43;/">c&#43;&#43;</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2020/ugly_code/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Don&#39;t write ugly code</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/2020/font_configuration/">
+            <span class="next-text nav-default">(Arch) Linux Font Configuration</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
         </div>
         
 
@@ -182,7 +207,8 @@
 
 
 
-<script type="text/javascript" src="/js/main.min.5884e86a3c9b0bf4c11ca51f6ed54c6336cf80562ac042643159f79c6cc6d6f4.js"></script>
+
+<script type="text/javascript" src="/js/main.min.8fcf69c69b72f3da4a433b25e511df06571bf0bca36d079ef9ad604474ae855b.js"></script>
 
 
 <script type="application/javascript">

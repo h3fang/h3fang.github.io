@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>(Arch) Linux Font Configuration - HE Fang - Some where to write something</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="He Fang" /><meta name="description" content="Introduction There is a saying that, the more you know, the more you don&amp;rsquo;t know.
+It&amp;rsquo;s true. But in general, we don&amp;rsquo;t know that there are a lot of things we do not know. For instance, I think I am pretty good at Linux. Every day I learn a little bit about Linux. Now I have wrote 35 pages of losses and gains about Linux. There are few Linux desktop users, probably about 1% of people are using Linux among all the desktop users. And I think I must be the top 1% of the 1%.
+But there is one thing that I know I don&amp;rsquo;t know about Linux, one thing I have tried several times to understand it and still fails, and that thing is Font Configuration.
+" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.73.0 with theme even" />
+
+
+<link rel="canonical" href="https://h3fang.github.io/post/2020/font_configuration/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.ea4964c050661c4f118424fddb3568261f6ce71ba01cbdf5d1b173db940158df.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" crossorigin="anonymous">
+
+
+<meta property="og:title" content="(Arch) Linux Font Configuration" />
+<meta property="og:description" content="Introduction
+There is a saying that, the more you know, the more you don&rsquo;t know.
+It&rsquo;s true. But in general, we don&rsquo;t know that there are a lot of things we do not know. For instance, I think I am pretty good at Linux. Every day I learn a little bit about Linux. Now I have wrote 35 pages of losses and gains about Linux. There are few Linux desktop users, probably about 1% of people are using Linux among all the desktop users. And I think I must be the top 1% of the 1%.
+But there is one thing that I know I don&rsquo;t know about Linux, one thing I have tried several times to understand it and still fails, and that thing is Font Configuration." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://h3fang.github.io/post/2020/font_configuration/" />
+<meta property="article:published_time" content="2020-05-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-18T00:00:00+00:00" />
+<meta itemprop="name" content="(Arch) Linux Font Configuration">
+<meta itemprop="description" content="Introduction
+There is a saying that, the more you know, the more you don&rsquo;t know.
+It&rsquo;s true. But in general, we don&rsquo;t know that there are a lot of things we do not know. For instance, I think I am pretty good at Linux. Every day I learn a little bit about Linux. Now I have wrote 35 pages of losses and gains about Linux. There are few Linux desktop users, probably about 1% of people are using Linux among all the desktop users. And I think I must be the top 1% of the 1%.
+But there is one thing that I know I don&rsquo;t know about Linux, one thing I have tried several times to understand it and still fails, and that thing is Font Configuration.">
+<meta itemprop="datePublished" content="2020-05-18T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-05-18T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="306">
+
+
+
+<meta itemprop="keywords" content="linux,fontconfig," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="(Arch) Linux Font Configuration"/>
+<meta name="twitter:description" content="Introduction
+There is a saying that, the more you know, the more you don&rsquo;t know.
+It&rsquo;s true. But in general, we don&rsquo;t know that there are a lot of things we do not know. For instance, I think I am pretty good at Linux. Every day I learn a little bit about Linux. Now I have wrote 35 pages of losses and gains about Linux. There are few Linux desktop users, probably about 1% of people are using Linux among all the desktop users. And I think I must be the top 1% of the 1%.
+But there is one thing that I know I don&rsquo;t know about Linux, one thing I have tried several times to understand it and still fails, and that thing is Font Configuration."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">He Fang</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+    <img src="/favicon.ico" alt="logo" style="margin-right: 16px;">He Fang</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">(Arch) Linux Font Configuration</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-05-18 </span>
+        
+          <span class="more-meta"> 306 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#the-problem">The Problem</a></li>
+    <li><a href="#the-battle">The Battle</a>
+      <ul>
+        <li><a href="#prepend-or-append">Prepend or Append</a></li>
+        <li><a href="#dejavuliberation-fonts">Dejavu/Liberation Fonts</a></li>
+        <li><a href="#android-fonts">Android Fonts</a></li>
+        <li><a href="#everything-is-sans-serif">Everything is Sans-serif</a></li>
+      </ul>
+    </li>
+    <li><a href="#the-lessons-we-learned">The Lessons We Learned</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="introduction">Introduction</h2>
+<p>There is a saying that, the more you know, the more you don&rsquo;t know.</p>
+<p>It&rsquo;s true. But in general, we don&rsquo;t know that there are a lot of things we do not know. For instance, I think I am pretty good at Linux. Every day I learn a little bit about Linux. Now I have wrote 35 pages of losses and gains about Linux. There are few Linux desktop users, probably about 1% of people are using Linux among all the desktop users. And I think I must be the top 1% of the 1%.</p>
+<p>But there is one thing that I know I don&rsquo;t know about Linux, one thing I have tried several times to understand it and still fails, and that thing is <strong>Font Configuration</strong>.</p>
+<h2 id="the-problem">The Problem</h2>
+<p>I actually know little about fonts. I only know there are three types of fonts.</p>
+<ul>
+<li><strong>Sans-serif</strong>. Font characters don&rsquo;t have curly strokes.</li>
+<li><strong>Serif</strong>. Font characters have curly strokes.</li>
+<li><strong>Monospace</strong>. Font characters have the same width. So it&rsquo;s perfect for displaying source code.</li>
+</ul>
+<p>Actually there is another type of fonts we usually use - Icon Fonts. You can also call them <strong>emoji</strong>s. But it doesn&rsquo;t have to be emojis, like <a href="https://fontawesome.com/">Font Awesome</a>. It doesn&rsquo;t matter what you call them, you know what I mean.</p>
+<p>If you use Arch Linux and you use default (empty) <strong>fontconfig</strong> configuration. Your fonts might look fine. But if you open <a href="https://getemoji.com/">getemoji.com</a> in your browser, you probably get something like this. And if you open this <a href="https://github.com/h3fang/dotfiles/blob/master/.config/i3blocks/config">GitHub page</a>, you probably see some blocks like this.</p>
+<h2 id="the-battle">The Battle</h2>
+<h3 id="prepend-or-append">Prepend or Append</h3>
+<h3 id="dejavuliberation-fonts">Dejavu/Liberation Fonts</h3>
+<h3 id="android-fonts">Android Fonts</h3>
+<h3 id="everything-is-sans-serif">Everything is Sans-serif</h3>
+<h2 id="the-lessons-we-learned">The Lessons We Learned</h2>
+<p>After all of these, I just want to say.</p>
+<p>Don&rsquo;t touch it. Just use the empty configuration. It doesn&rsquo;t worth it. 😂</p>
+<p>But I learned a lot from it. 😁</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://eev.ee/blog/2015/05/20/i-stared-into-the-fontconfig-and-the-fontconfig-stared-back-at-me/">https://eev.ee/blog/2015/05/20/i-stared-into-the-fontconfig-and-the-fontconfig-stared-back-at-me/</a></li>
+</ul>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">He Fang</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2020-05-18
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">linux</a>
+          <a href="/tags/fontconfig/">fontconfig</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2020/line_buffering_in_io/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Line buffering in IO</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/2020/libuv/">
+            <span class="next-text nav-default">First impression with libuv</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+    <div class="disqus-placeholder">Loading comments...</div>
+    <div class="disqus"></div>
+    <script type="text/javascript">
+      disqusLoader('.disqus', {
+        scriptUrl: '//h3fang.disqus.com/embed.js',
+        disqusConfig: function () {
+          this.callbacks.onReady = [function () {
+            var el = document.querySelector('.disqus-placeholder');
+            if (el.classList)
+              el.classList.add('is-hidden'); 
+            else
+              el.className += ' ' + 'is-hidden'; 
+          }];
+        }
+      });
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:hf.enigma@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/hfenigma" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/h3fang" class="iconfont icon-github" title="github"></a>
+  <a href="https://h3fang.github.io/feed.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/h3fang/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">He Fang</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.min.8fcf69c69b72f3da4a433b25e511df06571bf0bca36d079ef9ad604474ae855b.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144488536-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

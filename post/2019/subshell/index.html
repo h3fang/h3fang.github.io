@@ -1,56 +1,350 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Be careful when using pipes in shell script - HE Fang - Some where to write something</title><meta name=renderer content="webkit"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=theme-color content="#f8f5ec"><meta name=msapplication-navbutton-color content="#f8f5ec"><meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec"><meta name=author content="He Fang"><meta name=description content="&amp;quot;|&amp;quot; pipe operator redirects I/O to a subshell.
-  Variables in a subshell are not visible outside the block of code in the subshell."><meta name=generator content="Hugo 0.72.0 with theme even"><link rel=canonical href=https://h3fang.github.io/post/2019/subshell/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.ea4964c050661c4f118424fddb3568261f6ce71ba01cbdf5d1b173db940158df.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css crossorigin=anonymous><meta property="og:title" content="Be careful when using pipes in shell script"><meta property="og:description" content="&#34;|&#34; pipe operator redirects I/O to a subshell.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Be careful when using pipes in shell script - HE Fang - Some where to write something</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-Variables in a subshell are not visible outside the block of code in the subshell."><meta property="og:type" content="article"><meta property="og:url" content="https://h3fang.github.io/post/2019/subshell/"><meta property="article:published_time" content="2019-07-14T00:00:00+00:00"><meta property="article:modified_time" content="2019-07-14T00:00:00+00:00"><meta itemprop=name content="Be careful when using pipes in shell script"><meta itemprop=description content="&#34;|&#34; pipe operator redirects I/O to a subshell.
+<meta name="author" content="He Fang" /><meta name="description" content=" &amp;quot;|&amp;quot; pipe operator redirects I/O to a subshell.
+  Variables in a subshell are not visible outside the block of code in the subshell.
+" />
 
 
-Variables in a subshell are not visible outside the block of code in the subshell."><meta itemprop=datePublished content="2019-07-14T00:00:00+00:00"><meta itemprop=dateModified content="2019-07-14T00:00:00+00:00"><meta itemprop=wordCount content="159"><meta itemprop=keywords content="linux,shell,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Be careful when using pipes in shell script"><meta name=twitter:description content="&#34;|&#34; pipe operator redirects I/O to a subshell.
 
 
-Variables in a subshell are not visible outside the block of code in the subshell."><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>He Fang</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>Home</li></a><a href=/post/><li class=mobile-menu-item>Archives</li></a><a href=/tags/><li class=mobile-menu-item>Tags</li></a><a href=/categories/><li class=mobile-menu-item>Categories</li></a><a href=/about/><li class=mobile-menu-item>About</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo><img src=/favicon.ico alt=logo style=margin-right:16px>He Fang</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>Home</a></li><li class=menu-item><a class=menu-item-link href=/post/>Archives</a></li><li class=menu-item><a class=menu-item-link href=/tags/>Tags</a></li><li class=menu-item><a class=menu-item-link href=/categories/>Categories</a></li><li class=menu-item><a class=menu-item-link href=/about/>About</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Be careful when using pipes in shell script</h1><div class=post-meta><span class=post-time>2019-07-14</span>
-<span class=more-meta>159 words</span>
-<span class=more-meta>1 min read</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a href=#references>References</a></li></ul></nav></div></div><div class=post-content><blockquote><p><code>"|"</code> pipe operator redirects I/O to a subshell.</p></blockquote><blockquote><p>Variables in a subshell are not visible outside the block of code in the subshell.</p></blockquote><p>Thus the following code doesn&rsquo;t work as intended.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># check every window</span>
-<span class=nv>all_closed</span><span class=o>=</span><span class=m>1</span>
-wmctrl -l <span class=p>|</span> awk <span class=s1>&#39;{print $1}&#39;</span> <span class=p>|</span> <span class=k>while</span> <span class=nb>read</span> APP<span class=p>;</span> <span class=k>do</span>
-    notify-send <span class=s2>&#34;[</span><span class=nv>$APP</span><span class=s2>] is not closed, please check unsaved content and close it manually.&#34;</span>
-    <span class=nv>$all_closed</span><span class=o>=</span><span class=m>0</span>
-<span class=k>done</span>
 
-<span class=k>if</span> <span class=o>[[</span> <span class=nv>$all_closed</span> -eq <span class=m>0</span> <span class=o>]]</span><span class=p>;</span> <span class=k>then</span>
-    <span class=nb>exit</span> <span class=m>2</span>
-<span class=k>fi</span>
-</code></pre></td></tr></table></div></div><p>The <strong>all_closed</strong> variable is modified in the subshell created by pipes. The outside one remains unchanged. And the script will never exit with error code <strong>2</strong> no matter all windows are closed or not.</p><p>Fixing this piece of code is easy, just avoid using subshell (pipe).</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-bash data-lang=bash><span class=k>for</span> APP in <span class=k>$(</span>wmctrl -l <span class=p>|</span> awk <span class=s1>&#39;{print $1}&#39;</span><span class=k>)</span><span class=p>;</span> <span class=k>do</span>
-    notify-send <span class=s2>&#34;[</span><span class=nv>$APP</span><span class=s2>] is not closed, please check unsaved content and close it manually.&#34;</span>
-    <span class=nv>$all_closed</span><span class=o>=</span><span class=m>0</span>
-<span class=k>done</span>
-</code></pre></td></tr></table></div></div><h2 id=references>References</h2><ul><li><a href=https://www.tldp.org/LDP/abs/html/subshells.html>https://www.tldp.org/LDP/abs/html/subshells.html</a></li></ul></div><div class=post-copyright><p class=copyright-item><span class=item-title>Author</span>
-<span class=item-content>He Fang</span></p><p class=copyright-item><span class=item-title>LastMod</span>
-<span class=item-content>2019-07-14</span></p><p class=copyright-item><span class=item-title>License</span>
-<span class=item-content><a rel="license noopener" href=https://creativecommons.org/licenses/by-nc-nd/4.0/ target=_blank>CC BY-NC-ND 4.0</a></span></p></div><footer class=post-footer><div class=post-tags><a href=/tags/linux/>linux</a>
-<a href=/tags/shell/>shell</a></div><nav class=post-nav><a class=prev href=/post/2019/texlive-fontsextra/><i class="iconfont icon-left"></i><span class="prev-text nav-default">Debloating texlive-fontsextra</span>
-<span class="prev-text nav-mobile">Prev</span></a>
-<a class=next href=/post/2019/debug_python_c_extension/><span class="next-text nav-default">Debug python c/c++ extensions</span>
-<span class="next-text nav-mobile">Next</span>
-<i class="iconfont icon-right"></i></a></nav></footer></article></div><div id=disqus_thread></div><script type=text/javascript>(function(){if(window.location.hostname==='localhost')return;var dsq=document.createElement('script');dsq.type='text/javascript';dsq.async=true;var disqus_shortname='h3fang';dsq.src='//'+disqus_shortname+'.disqus.com/embed.js';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script><noscript>Please enable JavaScript to view the <a href=http://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript></div></main><footer id=footer class=footer><div class=social-links><a href=mailto:hf.enigma@gmail.com class="iconfont icon-email" title=email></a><a href=https://twitter.com/hfenigma class="iconfont icon-twitter" title=twitter></a><a href=https://github.com/h3fang class="iconfont icon-github" title=github></a><a href=https://h3fang.github.io/feed.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a></span>
-<span class=division>|</span>
-<span class=theme-info>Theme -
-<a class=theme-link href=https://github.com/h3fang/hugo-theme-even>Even</a></span>
-<span class=copyright-year>&copy;
-2019 -
-2020
-<span class=heart><i class="iconfont icon-heart"></i></span><span class=author>He Fang</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.5884e86a3c9b0bf4c11ca51f6ed54c6336cf80562ac042643159f79c6cc6d6f4.js></script><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-144488536-1','auto');ga('set','anonymizeIp',true);ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script></body></html>
+
+<meta name="generator" content="Hugo 0.73.0 with theme even" />
+
+
+<link rel="canonical" href="https://h3fang.github.io/post/2019/subshell/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f4f477372c8e29cb59eae7166b66d7804fce9ff2ffcfdb5c9a2adf0a59b04ab1.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Be careful when using pipes in shell script" />
+<meta property="og:description" content="
+&quot;|&quot; pipe operator redirects I/O to a subshell.
+
+
+Variables in a subshell are not visible outside the block of code in the subshell.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://h3fang.github.io/post/2019/subshell/" />
+<meta property="article:published_time" content="2019-07-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-07-14T00:00:00+00:00" />
+<meta itemprop="name" content="Be careful when using pipes in shell script">
+<meta itemprop="description" content="
+&quot;|&quot; pipe operator redirects I/O to a subshell.
+
+
+Variables in a subshell are not visible outside the block of code in the subshell.
+">
+<meta itemprop="datePublished" content="2019-07-14T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-07-14T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="159">
+
+
+
+<meta itemprop="keywords" content="linux,shell," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Be careful when using pipes in shell script"/>
+<meta name="twitter:description" content="
+&quot;|&quot; pipe operator redirects I/O to a subshell.
+
+
+Variables in a subshell are not visible outside the block of code in the subshell.
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">He Fang</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">
+    <img src="/favicon.ico" alt="logo" style="margin-right: 16px;">He Fang</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Be careful when using pipes in shell script</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-07-14 </span>
+        
+          <span class="more-meta"> 159 words </span>
+          <span class="more-meta"> 1 min read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <blockquote>
+<p><code>&quot;|&quot;</code> pipe operator redirects I/O to a subshell.</p>
+</blockquote>
+<blockquote>
+<p>Variables in a subshell are not visible outside the block of code in the subshell.</p>
+</blockquote>
+<p>Thus the following code doesn&rsquo;t work as intended.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># check every window</span>
+<span class="nv">all_closed</span><span class="o">=</span><span class="m">1</span>
+wmctrl -l <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span> <span class="p">|</span> <span class="k">while</span> <span class="nb">read</span> APP<span class="p">;</span> <span class="k">do</span>
+    notify-send <span class="s2">&#34;[</span><span class="nv">$APP</span><span class="s2">] is not closed, please check unsaved content and close it manually.&#34;</span>
+    <span class="nv">$all_closed</span><span class="o">=</span><span class="m">0</span>
+<span class="k">done</span>
+
+<span class="k">if</span> <span class="o">[[</span> <span class="nv">$all_closed</span> -eq <span class="m">0</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">exit</span> <span class="m">2</span>
+<span class="k">fi</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The <strong>all_closed</strong> variable is modified in the subshell created by pipes. The outside one remains unchanged. And the script will never exit with error code <strong>2</strong> no matter all windows are closed or not.</p>
+<p>Fixing this piece of code is easy, just avoid using subshell (pipe).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="k">for</span> APP in <span class="k">$(</span>wmctrl -l <span class="p">|</span> awk <span class="s1">&#39;{print $1}&#39;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span>
+    notify-send <span class="s2">&#34;[</span><span class="nv">$APP</span><span class="s2">] is not closed, please check unsaved content and close it manually.&#34;</span>
+    <span class="nv">$all_closed</span><span class="o">=</span><span class="m">0</span>
+<span class="k">done</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.tldp.org/LDP/abs/html/subshells.html">https://www.tldp.org/LDP/abs/html/subshells.html</a></li>
+</ul>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">He Fang</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-07-14
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linux/">linux</a>
+          <a href="/tags/shell/">shell</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2019/texlive-fontsextra/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Debloating texlive-fontsextra</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/2019/debug_python_c_extension/">
+            <span class="next-text nav-default">Debug python c/c&#43;&#43; extensions</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div class="disqus-placeholder">Loading comments...</div>
+    <div class="disqus"></div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/osvaldasvalutis/disqusLoader.js/disqusloader.min.js"></script>
+    <script type="text/javascript">
+      if (window.location.hostname !== 'localhost') {
+        disqusLoader('.disqus', {
+          scriptUrl: '//h3fang.disqus.com/embed.js',
+          disqusConfig: function () {
+            this.callbacks.onReady = [function () {
+              var el = document.querySelector('.disqus-placeholder');
+              if (el.classList)
+                el.classList.add('is-hidden'); 
+              else
+                el.className += ' ' + 'is-hidden'; 
+            }];
+          }
+        });
+      }
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:hf.enigma@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://twitter.com/hfenigma" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/h3fang" class="iconfont icon-github" title="github"></a>
+  <a href="https://h3fang.github.io/feed.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/h3fang/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2019 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">He Fang</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.5884e86a3c9b0bf4c11ca51f6ed54c6336cf80562ac042643159f79c6cc6d6f4.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-144488536-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>
