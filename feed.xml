@@ -6,7 +6,7 @@
     <description>Recent content on HE Fang - Some where to write something</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en_US</language>
-    <lastBuildDate>Thu, 04 Jun 2020 19:05:34 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 02 Aug 2020 19:05:34 +0800</lastBuildDate>
     
 	<atom:link href="https://h3fang.github.io/feed.xml" rel="self" type="applicatoin/rss+xml" />
     
@@ -20,6 +20,15 @@
       <description>About me Nothing.
 More information Nothing.
 Contact me Don&amp;rsquo;t do it.</description>
+    </item>
+    
+    <item>
+      <title>New laptop - Yoga 14s AMD version</title>
+      <link>https://h3fang.github.io/post/2020/yoga_14s/</link>
+      <pubDate>Sun, 02 Aug 2020 19:05:34 +0800</pubDate>
+      
+      <guid>https://h3fang.github.io/post/2020/yoga_14s/</guid>
+      <description>&lt;p&gt;As my old laptop ages, the condition of it keeps degrading (broken chassis/hinge, wear-out battery, nonfunctional numpad, etc.). Recently I switched to a new laptop - yoga 14s AMD version.&lt;/p&gt;</description>
     </item>
     
     <item>

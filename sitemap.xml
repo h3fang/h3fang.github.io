@@ -9,6 +9,48 @@
   </url>
   
   <url>
+    <loc>https://h3fang.github.io/tags/arch/</loc>
+    <lastmod>2020-08-02T19:05:34+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://h3fang.github.io/</loc>
+    <lastmod>2020-08-02T19:05:34+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://h3fang.github.io/tags/laptop/</loc>
+    <lastmod>2020-08-02T19:05:34+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://h3fang.github.io/post/2020/yoga_14s/</loc>
+    <lastmod>2020-08-02T19:05:34+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://h3fang.github.io/post/</loc>
+    <lastmod>2020-08-02T19:05:34+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://h3fang.github.io/tags/</loc>
+    <lastmod>2020-08-02T19:05:34+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://h3fang.github.io/post/2020/ugly_code/</loc>
     <lastmod>2020-06-04T19:05:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -16,28 +58,7 @@
   </url>
   
   <url>
-    <loc>https://h3fang.github.io/</loc>
-    <lastmod>2020-06-04T19:05:34+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://h3fang.github.io/post/</loc>
-    <lastmod>2020-06-04T19:05:34+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://h3fang.github.io/tags/programming/</loc>
-    <lastmod>2020-06-04T19:05:34+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://h3fang.github.io/tags/</loc>
     <lastmod>2020-06-04T19:05:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
