@@ -6,11 +6,7 @@
     <description>Recent content on HE Fang - Some where to write something</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en_US</language>
-    <lastBuildDate>Sun, 02 Aug 2020 19:05:34 +0800</lastBuildDate>
-    
-	<atom:link href="https://h3fang.github.io/feed.xml" rel="self" type="applicatoin/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 02 Aug 2020 19:05:34 +0800</lastBuildDate><atom:link href="https://h3fang.github.io/feed.xml" rel="self" type="applicatoin/rss+xml" />
     <item>
       <title>About</title>
       <link>https://h3fang.github.io/about/</link>
