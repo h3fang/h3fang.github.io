@@ -35,6 +35,9 @@
     }
   </script>
   <script id="fragmentShader" type="x-shader/x-fragment">
+    #ifdef GL_ES
+    precision mediump float;
+    #endif
     uniform vec2 u_resolution;
     uniform float u_time;
     #define POINT_COUNT 15

@@ -155,7 +155,7 @@ Contact me Don&amp;rsquo;t do it.</description>
       
       <guid>https://h3fang.github.io/heart/</guid>
       <description>Heart    body { margin: 0px; } canvas { width: 100%; height: 100%; display: block; } p { position: absolute; right: 0; bottom: 0; color: rgb(0, 149, 248); z-index: 1000; }     Love is mutual.
-void main() { gl_Position = vec4( position, 1.0 ); }  uniform vec2 u_resolution; uniform float u_time; #define POINT_COUNT 15 vec2 points[POINT_COUNT]; const float speed = -0.15; const float len = 0.</description>
+void main() { gl_Position = vec4( position, 1.0 ); }  #ifdef GL_ES precision mediump float; #endif uniform vec2 u_resolution; uniform float u_time; #define POINT_COUNT 15 vec2 points[POINT_COUNT]; const float speed = -0.</description>
     </item>
     
   </channel>
